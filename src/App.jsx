@@ -1,12 +1,25 @@
-import { useState } from 'react'
-import './App.css'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+
+import Layout from './components/Layout.jsx'
+import Homepage from './pages/Homepage.jsx'
+
+const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          index: 'true',
+          element: <Homepage />
+        }
+      ]
+    }
+]);
 
 function App() {
   
   return (
-    <>
-    <h1>App page</h1>
-    </>
+    <RouterProvider router={router} />
   )
 }
 
