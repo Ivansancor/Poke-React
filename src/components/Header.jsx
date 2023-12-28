@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import Logo from './Logo.jsx'
 
 export default function Header() {
@@ -6,8 +6,16 @@ export default function Header() {
         <header>
             <Logo />
             <nav>
-                <Link to="about">About</Link>
-                <Link to="something">Something else</Link>
+                <NavLink to="about"
+                className={ ({isActive}) => isActive ? 'link-active' : ""}
+                >
+                    About
+                </NavLink>
+                <NavLink to="pokemon"
+                className={ ({isActive}) => isActive ? 'link-active' : ""}
+                >
+                    Pokemon
+                </NavLink>
             </nav>
         </header>
     )
