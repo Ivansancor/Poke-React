@@ -72,15 +72,16 @@ main {
   font-family: Montserrat, sans-serif;
 }
 
-.err404 {
+.err404, .err-gen {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
   height: calc(100vh - 13rem);
 }
 
-.err404>h2 {
+.err404>h2, .err-gen>p {
   margin: 2rem 0 3rem;
 }
 
@@ -99,6 +100,7 @@ button:hover {
   border: 2px solid #f00000;
   background-color: #f0f0f0;
   color: black;
+  cursor: pointer;
 }
 
 button:active {
