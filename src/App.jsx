@@ -4,6 +4,7 @@ import Layout from './components/Layout.jsx'
 import Homepage from './pages/Homepage.jsx'
 import About from './pages/About.jsx'
 import Pokemon, { loader as PokemonLoader } from './pages/Pokemon.jsx'
+import SinglePokemon, { loader as SinglePokemonLoader } from './pages/SinglePokemon.jsx'
 import Err404 from './pages/Err404.jsx'
 import Error from './pages/Error.jsx'
 
@@ -25,7 +26,14 @@ const router = createBrowserRouter([
           path: "pokemon",
           element: <Pokemon />,
           errorElement: <Error />,
-          loader: PokemonLoader
+          loader: PokemonLoader,
+          children: [
+            {
+              path: ":id",
+              element: <SinglePokemon />,
+              loader: SinglePokemonLoader
+            }
+          ]
         },
         {
           path: '*',
