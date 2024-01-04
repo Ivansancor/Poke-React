@@ -10,12 +10,14 @@ export default function SinglePokemon() {
     return (
         <div className="poke-card">
             <div className="img-cluster">
-                <img src={pokemon.sprites.front_default} height="150" />
-                <img src={pokemon.sprites.back_default} height="150" />
+                {pokemon.sprites.front_default && <img src={pokemon.sprites.front_default} width="150" />}
+                {pokemon.sprites.back_default && <img src={pokemon.sprites.back_default} width="150" />}
             </div>
-            <h1>{pokemon.species.name}</h1>
-            <h2>Index: {pokemon.game_indices.id}</h2>
-            <p>Type: {pokemon.types.map(index => <span key={pokemon.species.name}>{index.type.name}</span>)}</p>
+            <div className="main-info-cluster">
+                <h1 className="poke-card-name">{pokemon.species.name}</h1>
+                <p className="poke-card-index">Index: {pokemon.id}</p>
+            </div>
+            <p className="poke-card-type">Type{pokemon.types.length > 1 ? "s" : ""}: {pokemon.types.map(typeIndex => `${typeIndex.type.name}${pokemon.types.length === typeIndex.slot ? "" : ", "}`)}</p>
         </div>
     )
 }

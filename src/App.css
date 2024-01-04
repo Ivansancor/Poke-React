@@ -96,12 +96,17 @@ main {
   align-items: center;
   justify-content: center;
 }
-.poke-card > h1 {
+
+.poke-card-name {
   text-transform: capitalize;
 }
-.poke-card > p span {
+.poke-card-index {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+}
+.poke-card-type {
   text-transform: capitalize;
-  margin-right: 1rem;
+  margin-top: 1rem;
 }
 
 button {
