@@ -1,4 +1,4 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { RouterProvider, createBrowserRouter, Outlet } from 'react-router-dom'
 
 import Layout from './components/Layout.jsx'
 import Homepage from './pages/Homepage.jsx'
@@ -24,13 +24,18 @@ const router = createBrowserRouter([
         },
         {
           path: "pokemon",
-          element: <Pokemon />,
-          errorElement: <Error />,
-          loader: PokemonLoader,
+          element: <Outlet />,
           children: [
+            {
+              index: 'true',
+              element: <Pokemon />,
+              errorElement: <Error />,
+              loader: PokemonLoader
+            },
             {
               path: ":id",
               element: <SinglePokemon />,
+              errorElement: <Error />,
               loader: SinglePokemonLoader
             }
           ]

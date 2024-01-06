@@ -1,6 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
 
+:root {
+  --main-red: #f00000;
+  --main-white: #f0f0f0;
+
+  --grass: #7AC74C;
+  --rock: #B6A136;
+  --fighting: #C22E28;
+  --electric: #F7D02C;
+  --water: #6390F0;
+  --fire: #EE8130;
+  --dragon: #6F35FC;
+  --flying: #A98FF3;
+  --ghost: #735797;
+  --fairy: #D685AD;
+  --psychic: #F95587;
+  --ice: #96D9D6;
+  --steel: #B7B7CE;
+  --poison: #A33EA1;
+  --bug: #A6B91A;
+  --normal: #A8A77A;
+  --dark: #705746;
+  --ground: #E2BF65;
+  --stellar: black;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -22,8 +47,8 @@ a {
 header {
   height: 6rem;
   width: 100vw;
-  background-color: #f0f0f0;
-  box-shadow: 0 5px #f00000;
+  background-color: var(--main-white);
+  box-shadow: 0 5px var(--main-red);
   padding: 1rem;
   display: flex;
   align-items: center;
@@ -49,7 +74,7 @@ header {
 }
 
 .logo>h1>span {
-  color: #f00000;
+  color: var(--main-red);
 }
 
 header>nav>a {
@@ -59,12 +84,34 @@ header>nav>a {
 
 header>nav>a:hover {
   font-weight: bold;
-  color: #f00000;
+  color: var(--main-red);
 }
 
 .link-active {
   font-weight: bold;
   color: black;
+}
+
+.homepage-btn {
+  height: 3rem;
+  width: 12rem;
+  color: white;
+  background-color: var(--main-red);
+  border-radius: 25px;
+  border: none;
+  font-size: 1rem;
+  font-family: Rubik, sans-serif;
+}
+
+.homepage-btn:hover {
+  border: 2px solid var(--main-red);
+  background-color: var(--main-white);
+  color: black;
+  cursor: pointer;
+}
+
+.homepage-btn:active {
+  box-shadow: inset 1px 1px 1px 1px var(--main-red);
 }
 
 main {
@@ -85,16 +132,73 @@ main {
   margin: 2rem 0 3rem;
 }
 
+.pokemon-div > ul {
+  margin-top: 2rem;
+  display: grid;
+  grid-template: repeat(25, 1fr) / repeat(4, 1fr);
+  gap: 1rem;
+  grid-auto-flow: column;
+  
+}
+.pokemon-div > ul > li {
+  margin-top: 1rem;
+  text-transform: capitalize;
+  list-style: none;
+}
+.pokemon-div > ul > li:hover {
+  font-weight: bold;
+}
+
+
+.pagination-div {
+  display: relative;
+  height: 5rem;
+}
+.pagination-btn {
+  height: 1.5rem;
+  width: 8rem;
+  color: white;
+  margin-top: 3rem;
+  background-color: var(--main-red);
+  border-radius: 25px;
+  border: none;
+  font-size: 1rem;
+  font-family: Rubik, sans-serif;
+}
+.pagination-btn:hover {
+  border: 2px solid var(--main-red);
+  background-color: var(--main-white);
+  color: black;
+  cursor: pointer;
+}
+.pagination-btn:active {
+  box-shadow: inset 1px 1px 1px 1px var(--main-red);
+}
+.next-btn {
+  position: absolute;
+  right: 2rem;
+}
+.prev-btn {
+  position: absolute;
+  left: 2rem;
+}
+
 .poke-card {
-  background-color: #f0f0f0;
+  background-color: var(--main-white);
   border-radius: 2rem;
-  width: 20rem;
-  height: 20rem;
+  width: 15rem;
+  height: 18rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
+}
+
+.poke-card img {
+  background-color: white;
+  border-radius: 2rem;
 }
 
 .poke-card-name {
@@ -107,28 +211,74 @@ main {
 .poke-card-type {
   text-transform: capitalize;
   margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
-
-button {
-  height: 3rem;
-  width: 12rem;
+.type-pill {
+  height: 1.5rem;
+  border-radius: 0.2rem;
+  padding: 0.1rem 1rem;
   color: white;
-  background-color: #f00000;
-  border-radius: 25px;
-  border: none;
   font-size: 1rem;
-  font-family: Rubik, sans-serif;
 }
 
-button:hover {
-  border: 2px solid #f00000;
-  background-color: #f0f0f0;
-  color: black;
-  cursor: pointer;
+.grass {
+  background-color: var(--grass);
 }
-
-button:active {
-  box-shadow: inset 1px 1px 1px 1px #f00000;
+.rock {
+  background-color: var(--rock);
+}
+.fighting {
+  background-color: var(--fighting);
+}
+.electric {
+  background-color: var(--electric);
+}
+.water {
+  background-color: var(--water);
+}
+.fire {
+  background-color: var(--fire);
+}
+.dragon {
+  background-color: var(--dragon);
+}
+.flying {
+  background-color: var(--flying);
+}
+.ghost {
+  background-color: var(--ghost);
+}
+.fairy {
+  background-color: var(--fairy);
+}
+.psychic {
+  background-color: var(--psychic);
+}
+.ice {
+  background-color: var(--ice);
+}
+.steel {
+  background-color: var(--steel);
+}
+.poison {
+  background-color: var(--poison);
+}
+.bug {
+  background-color: var(--bug);
+}
+.normal {
+  background-color: var(--normal);
+}
+.dark {
+  background-color: var(--dark);
+}
+.ground {
+  background-color: var(--ground);
+}
+.stellar {
+  background-color: var(--stellar);
 }
 
 footer {
@@ -136,7 +286,7 @@ footer {
   bottom: 0;
   height: 3rem;
   width: 100vw;
-  background-color: #f00000;
+  background-color: var(--main-red);
   display: flex;
   align-items: center;
   justify-content: center;
