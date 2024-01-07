@@ -1,5 +1,5 @@
-export async function getPokemon() {
-    const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100');
+export async function getPokemon(offset) {
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=100&offset=${offset}`);
     if (!res.ok) {
         throw {
             message: "Failed to load Pokemon",

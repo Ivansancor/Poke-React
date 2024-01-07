@@ -183,10 +183,17 @@ main {
   left: 2rem;
 }
 
+.single-pokemon-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .poke-card {
   background-color: var(--main-white);
   border-radius: 2rem;
-  width: 15rem;
+  width: auto;
+  padding: 2rem;
   height: 18rem;
   text-align: center;
   display: flex;
@@ -194,6 +201,12 @@ main {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+}
+
+.poke-card-special {
+  background-color: goldenrod;
+  color: white;
+  height: 20rem;
 }
 
 .poke-card img {
@@ -221,6 +234,11 @@ main {
   padding: 0.1rem 1rem;
   color: white;
   font-size: 1rem;
+}
+.poke-card-special-info {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin: 0.5rem 0;
 }
 
 .grass {
