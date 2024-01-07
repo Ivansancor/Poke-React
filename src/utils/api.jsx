@@ -1,13 +1,16 @@
-export async function getPokemon(offset) {
-    const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=100&offset=${offset}`);
-    if (!res.ok) {
-        throw {
-            message: "Failed to load Pokemon",
-            statusText: res.statusText,
-            status: res.status
-        }
+export async function getPokemon(page) {
+    if (page > 0 && page < 15) {
+        const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=100&offset=${(page - 1) * 100}`);
+        if (!res.ok) {
+            throw {
+                message: "Failed to load Pokemon page",
+                statusText: res.statusText,
+                status: res.status
+            }
+        } return await res.json();
+    } else {
+        throw new Error("This Pokemon page does not exist.")
     }
-    return await res.json();
 }
 
 export async function getSinglePokemon(id) {

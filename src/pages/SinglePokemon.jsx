@@ -13,21 +13,21 @@ export default function SinglePokemon() {
     return (
         <div className="single-pokemon-div">
             {pokemon.id > 10001 ?
-                <Link to={`/pokemon/${pokemon.id - 1}`}>
+                <Link to={`/pokemon/poke/${pokemon.id - 1}`}>
                     <button className="pagination-btn">
                         &larr; Previous
                     </button>
                 </Link>
                 :
             pokemon.id === 10001 ?
-                <Link to={`/pokemon/${pokemon.id - 8976}`}>
+                <Link to={`/pokemon/poke/${pokemon.id - 8976}`}>
                     <button className="pagination-btn">
                     &larr; Previous
                     </button>
                 </Link>
                 :
             pokemon.id > 1 && pokemon.id <= 1025 ?
-                <Link to={`/pokemon/${pokemon.id - 1}`}>
+                <Link to={`/pokemon/poke/${pokemon.id - 1}`}>
                     <button className="pagination-btn">
                         &larr; Previous
                     </button>
@@ -62,21 +62,21 @@ export default function SinglePokemon() {
                 </div>
             </div>
             {pokemon.id < 1025 ?
-                <Link to={`/pokemon/${pokemon.id + 1}`}>
+                <Link to={`/pokemon/poke/${pokemon.id + 1}`}>
                     <button className="pagination-btn">
                         Next &rarr;
                     </button>
                 </Link>
                 :
             pokemon.id === 1025 ?
-                <Link to={`/pokemon/${pokemon.id + 8976}`}>
+                <Link to={`/pokemon/poke/${pokemon.id + 8976}`}>
                     <button className="pagination-btn">
                         Next &rarr;
                     </button>
                 </Link>
                 :
             pokemon.id >= 10001 && pokemon.id < 10277 ?
-                <Link to={`/pokemon/${pokemon.id + 1}`}>
+                <Link to={`/pokemon/poke/${pokemon.id + 1}`}>
                     <button className="pagination-btn">
                         Next &rarr;
                     </button>

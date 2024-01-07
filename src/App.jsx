@@ -1,9 +1,10 @@
-import { RouterProvider, createBrowserRouter, Outlet } from 'react-router-dom'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 import Layout from './components/Layout.jsx'
 import Homepage from './pages/Homepage.jsx'
 import About from './pages/About.jsx'
-import Pokemon, { loader as PokemonLoader } from './pages/Pokemon.jsx'
+import Pokemon from './pages/Pokemon.jsx'
+import PokemonList, { loader as PokemonLoader } from './pages/PokemonList.jsx'
 import SinglePokemon, { loader as SinglePokemonLoader } from './pages/SinglePokemon.jsx'
 import Err404 from './pages/Err404.jsx'
 import Error from './pages/Error.jsx'
@@ -24,16 +25,16 @@ const router = createBrowserRouter([
         },
         {
           path: "pokemon",
-          element: <Outlet />,
+          element: <Pokemon />,
           children: [
             {
-              index: 'true',
-              element: <Pokemon />,
+              path: ":page",
+              element: <PokemonList />,
               errorElement: <Error />,
               loader: PokemonLoader
             },
             {
-              path: ":id",
+              path: "poke/:id",
               element: <SinglePokemon />,
               errorElement: <Error />,
               loader: SinglePokemonLoader

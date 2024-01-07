@@ -4,6 +4,7 @@
 :root {
   --main-red: #f00000;
   --main-white: #f0f0f0;
+  --special: goldenrod;
 
   --grass: #7AC74C;
   --rock: #B6A136;
@@ -132,33 +133,14 @@ main {
   margin: 2rem 0 3rem;
 }
 
-.pokemon-div > ul {
-  margin-top: 2rem;
-  display: grid;
-  grid-template: repeat(25, 1fr) / repeat(4, 1fr);
-  gap: 1rem;
-  grid-auto-flow: column;
-  
-}
-.pokemon-div > ul > li {
-  margin-top: 1rem;
-  text-transform: capitalize;
-  list-style: none;
-}
-.pokemon-div > ul > li:hover {
-  font-weight: bold;
-}
-
-
 .pagination-div {
   display: relative;
   height: 5rem;
 }
 .pagination-btn {
-  height: 1.5rem;
+  height: 2rem;
   width: 8rem;
   color: white;
-  margin-top: 3rem;
   background-color: var(--main-red);
   border-radius: 25px;
   border: none;
@@ -177,11 +159,72 @@ main {
 .next-btn {
   position: absolute;
   right: 2rem;
+  width: 8rem;
+  margin-top: 3rem;
 }
 .prev-btn {
   position: absolute;
   left: 2rem;
+  width: 8rem;
+  margin-top: 3rem;
 }
+
+
+.pokemon-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+}
+.pokemon-div > p {
+  margin-top: 3rem;
+}
+.pokemon-div input {
+  width: 16rem;
+  height: 2rem;
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+  font-family: Rubik, sans-serif;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: var(--main-white);
+}
+.pokemon-div input:focus {
+  outline: 0.1rem solid var(--main-red);
+}
+.pokemon-div .pagination-btn {
+  width: 26rem;
+}
+
+
+.pokemon-list-div > ul {
+  margin-top: 2rem;
+  display: grid;
+  grid-template: repeat(25, 1fr) / repeat(4, 1fr);
+  gap: 1rem;
+  grid-auto-flow: column;
+}
+.pokemon-list-div .short-ul {
+  display: flex;
+  flex-direction: column;
+}
+.pokemon-list-div .short-ul-btn {
+  position: absolute;
+  bottom: 5rem;
+}
+.pokemon-list-div li {
+  margin-top: 1rem;
+  text-transform: capitalize;
+  list-style: none;
+}
+.pokemon-list-div li:hover {
+  font-weight: bold;
+}
+.poke-special {
+  color: var(--special);
+}
+
 
 .single-pokemon-div {
   display: flex;
@@ -204,7 +247,7 @@ main {
 }
 
 .poke-card-special {
-  background-color: goldenrod;
+  background-color: var(--special);
   color: white;
   height: 20rem;
 }

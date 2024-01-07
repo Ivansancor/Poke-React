@@ -1,37 +1,16 @@
-import { useState } from "react";
-import { useLoaderData, Link } from "react-router-dom"
-import { getPokemon } from '../utils/api.jsx'
-
-let offset = 0;
-export async function loader() {
-    return await getPokemon(offset);
-}
+import { Link, Outlet, useParams } from "react-router-dom"
 
 export default function Pokemon() {
-    const [offsetState, setOffsetState] = useState(0);
-    const pokemon = useLoaderData();
-    const pokemonElems = pokemon.results.map((poke, index) => 
-        <li key={poke.name}>
-            <Link to={poke.name}>{offsetState + index + 1 < 1026 ? offsetState + index + 1 : offsetState + index + 8976 }. {poke.name}</Link>
-        </li>
-    )
-
-    function handlePrev(){
-       setOffsetState ((prevOffsetState)=> prevOffsetState - 100);
-    }
-    function handleNext(){
-        setOffsetState ((prevOffsetState)=> prevOffsetState + 100);
-    }
-    
-    
+    const params = useParams();
     return (
-        <div className="pokemon-div">
-            <h1>Pokemon list</h1>
-            <ul>{pokemonElems}</ul>
-            <div className="pagination-div">
-                <button className="pagination-btn prev-btn" onClick={handlePrev}>&larr; Previous</button>
-                <button className="pagination-btn next-btn" onClick={handleNext}>Next &rarr;</button>
+        params.page || params. id ? <Outlet /> :
+            <div>
+                <h1>This is the Pokemon Page</h1>
+                <div className="pokemon-div">
+                    <p><label htmlFor="searchbar">Perform a search: </label><input id="searchbar" type="text" placeholder="Type name of Pokemon or ID"/></p>
+                    <p>or</p>
+                    <p><Link to="1"><button className="pagination-btn">Go to Pokemon List</button></Link></p>
+                </div>
             </div>
-        </div>
     )
 }
