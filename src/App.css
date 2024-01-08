@@ -33,16 +33,19 @@
   padding: 0;
 }
 
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .bod-div {
   min-height: 100vh;
   max-width: 100vw;
   overflow-x: hidden;
   position: relative;
-}
-
-a {
-  text-decoration: none;
-  color: black;
 }
 
 header {
@@ -177,7 +180,7 @@ main {
   justify-content: center;
   margin-top: 3rem;
 }
-.pokemon-div > p {
+.pokemon-div > p, .pokemon-div > div {
   margin-top: 3rem;
 }
 .pokemon-div input {
@@ -216,7 +219,6 @@ main {
 .pokemon-list-div li {
   margin-top: 1rem;
   text-transform: capitalize;
-  list-style: none;
 }
 .pokemon-list-div li:hover {
   font-weight: bold;
@@ -225,6 +227,24 @@ main {
   color: var(--special);
 }
 
+
+.matched-list {
+  background-color: var(--main-white);
+  width: 26rem;
+  min-height: 3rem;
+  text-align: center;
+  text-transform: capitalize;
+  padding: 2rem;
+}
+.matched-list > li {
+  margin-top: 1rem;
+}
+.matched-list > li:first-child {
+  margin-top: 0;
+}
+.matched-list > li:hover {
+  font-weight: bold;
+}
 
 .single-pokemon-div {
   display: flex;

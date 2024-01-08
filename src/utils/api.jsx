@@ -13,6 +13,17 @@ export async function getPokemon(page) {
     }
 }
 
+export async function getAllPokemon() {
+    const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=2000");
+    if (!res.ok) {
+        throw {
+            message: "Failed to load Pokemon data.",
+            statusText: res.statusText,
+            status: res.status
+        }
+    } return await res.json();
+}
+
 export async function getSinglePokemon(id) {
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
     if (!res.ok) {
