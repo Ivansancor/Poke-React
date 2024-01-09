@@ -94,6 +94,7 @@ header>nav>a:hover {
 .link-active {
   font-weight: bold;
   color: black;
+  pointer-events: none; 
 }
 
 .homepage-btn {

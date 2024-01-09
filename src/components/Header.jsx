@@ -1,7 +1,8 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink} from 'react-router-dom'
 import Logo from './Logo.jsx'
 
 export default function Header() {
+
     return (
         <header>
             <Logo />
@@ -12,7 +13,7 @@ export default function Header() {
                     About
                 </NavLink>
                 <NavLink to="pokemon"
-                className={ ({isActive}) => isActive ? 'link-active' : ""}
+                    className={ ({isActive}) => isActive ? 'link-active' : ""}
                 >
                     Pokemon
                 </NavLink>
